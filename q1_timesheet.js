@@ -19,6 +19,7 @@ for (let i = 0; i < daysOfWorkWeek.length; i++){
     let hours = readlineSync.questionFloat(`Enter hours worked on ${daysOfWorkWeek[i]}: `);
     hoursWorked.push(hours);
 }
+console.log("--------------------------------------------------------------------------------------------------");
     //mostHoursWorked Uses Math.max to calculate the largest number in the hoursWorked array
     //mostWorkedDays uses the filter function to 
 let mostHoursWorked = Math.max(...hoursWorked);
@@ -30,6 +31,7 @@ if (mostWorkedDays.length === 1){
 }else{
     console.log(`The most hours worked was on: ${mostWorkedDays.join(', ')} when you worked ${mostHoursWorked} hours each day`)
 }
+console.log("--------------------------------------------------------------------------------------------------");
 
     //For loop that calculate the sum of all numbers in the array and then prints it
 let sum = 0
@@ -38,6 +40,7 @@ for (let i = 0; i <= hoursWorked[i]; i++){
 }
 console.log("The total number of hours worked was: " + sum);
 console.log("The average number of hours worked each day was: " + (sum / hoursWorked.length));
+console.log("--------------------------------------------------------------------------------------------------");
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
