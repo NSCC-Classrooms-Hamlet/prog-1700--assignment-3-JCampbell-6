@@ -10,14 +10,23 @@ Title: PROG1700 Assignment 3- Q1 Timesheet
 function main()
 {
     //Stores User inputed hours worked.
-let hoursWorked = [];
+const hoursWorked = [];
     //Stores Day 1 through Day 5 (Mon-Fri).
-let daysOfWorkWeek = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"]
+const daysOfWorkWeek = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"]
 
     //Prompts the user to input amount of hours worked for each day of the week.
 for (let i = 0; i < daysOfWorkWeek.length; i++){
     let hours = readlineSync.questionFloat(`Enter hours worked on ${daysOfWorkWeek[i]}: `);
     hoursWorked.push(hours);
+}
+
+let mostHoursWorked = Math.max(...hoursWorked);
+let mostWorkedDays = daysOfWorkWeek.filter((day, index) => hoursWorked[index] === mostHoursWorked);
+
+if (mostWorkedDays.length === 1){
+    console.log(`The most hours worked was on: ${mostWorkedDays[0]} when you worked ${mostHoursWorked} hours`);
+}else{
+    console.log(`The most hours worked was on: ${mostWorkedDays.join(', ')} when you worked ${mostHoursWorked} hours each day`)
 }
 
 }
