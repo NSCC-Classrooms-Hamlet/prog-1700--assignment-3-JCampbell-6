@@ -9,6 +9,16 @@ Title: PROG1700 Assignment 3- Q1 Timesheet
 // DO NOT EDIT: The main function to house our program code 
 function main()
 {
+    //Stores User inputed hours worked.
+let hoursWorked = [];
+    //Stores Day 1 through Day 5 (Mon-Fri).
+let daysOfWorkWeek = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"]
+
+    //Prompts the user to input amount of hours worked for each day of the week.
+for (let i = 0; i < daysOfWorkWeek.length; i++){
+    let hours = readlineSync.questionFloat(`Enter hours worked on ${daysOfWorkWeek[i]}: `);
+    hoursWorked.push(hours);
+}
 
 }
 
