@@ -20,6 +20,7 @@ for (let i = 0; i < daysOfWorkWeek.length; i++){
     hoursWorked.push(hours);
 }
 console.log("--------------------------------------------------------------------------------------------------");
+
     //mostHoursWorked Uses Math.max to calculate the largest number in the hoursWorked array
     //mostWorkedDays uses the filter function to 
 let mostHoursWorked = Math.max(...hoursWorked);
@@ -40,6 +41,7 @@ for (let i = 0; i <= hoursWorked[i]; i++){
 }
 console.log("The total number of hours worked was: " + sum);
 console.log("The average number of hours worked each day was: " + (sum / hoursWorked.length));
+
 console.log("--------------------------------------------------------------------------------------------------");
 
 const daysSlackedOff = daysOfWorkWeek.filter((day, index) => hoursWorked[index] < 7);
