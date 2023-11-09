@@ -18,7 +18,7 @@ function replaceLetters(inputedSentence, lettersToReplace) {
 //Loops through each character in the inputedSentence
 for (let i = 0; i < inputedSentence.length; i++) {
 //Gets the current character in the sentence
-    let character = sentence[i];
+    let character = inputedSentence[i];
 //Checks to see if the character needs to be replaced
     let isLetterToReplace = false;
 //Loops through each letter in the lettersToReplace array
@@ -44,7 +44,17 @@ return {editedSentence, lettersReplaced: count};
 }
 function main()
 {
-    // enter your code here
+while (true) {
+    let userInputedSentence = readlineSync.question("Type a phrase (or 'quit' to exit program: ")
+    if (userInputedSentence.toLowerCase() === "quit") {
+        break;
+    }
+    let lettersToReplace = readlineSync.question("Type a comma-seperated list of letters to redact: ").split(',').map(letter => letter.trim());
+    let results = replaceLetters(userInputedSentence, lettersToReplace);
+
+    console.log(`Number of letters redacted: ${results.lettersReplaced}`);
+    console.log(`Redacted Phrase: ${results.editedSentence}`);
+    }
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
