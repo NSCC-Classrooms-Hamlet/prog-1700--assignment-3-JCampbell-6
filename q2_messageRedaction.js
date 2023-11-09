@@ -44,12 +44,18 @@ return {editedSentence, lettersReplaced: count};
 }
 function main()
 {
+//Infinite loop until "exit" is inputted
 while (true) {
+//Prompts the user to enter a phrase or "quit" to end the program
     let userInputedSentence = readlineSync.question("Type a phrase (or 'quit' to exit program: ")
+//Checks to see if "quit" was inputted by the user
     if (userInputedSentence.toLowerCase() === "quit") {
+//Exits the loop if "quit" was entered
         break;
     }
+//Prompts the user to enter a comma-seperated list of letters to redact.
     let lettersToReplace = readlineSync.question("Type a comma-seperated list of letters to redact: ").split(',').map(letter => letter.trim());
+// Call the replaceLetters function to redact specific letters in the user inputed phrase
     let results = replaceLetters(userInputedSentence, lettersToReplace);
 
     console.log(`Number of letters redacted: ${results.lettersReplaced}`);
