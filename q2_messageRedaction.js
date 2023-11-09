@@ -6,7 +6,42 @@ Date: 11-08-2023
 Title: PROG1700 Assignment 3- Q2 Message Redaction
 
 */
-// DO NOT EDIT: The main function to house our program code 
+// DO NOT EDIT: The main function to house our program code
+
+//Function to replace specific letters in sentence
+function replaceLetters(inputedSentence, lettersToReplace) {
+//Count for the number of letters replaced
+    let count = 0;
+//Empty string to store the edited sentence
+    let editedSentence = "";
+
+//Loops through each character in the inputedSentence
+for (let i = 0; i < inputedSentence.length; i++) {
+//Gets the current character in the sentence
+    let character = sentence[i];
+//Checks to see if the character needs to be replaced
+    let isLetterToReplace = false;
+//Loops through each letter in the lettersToReplace array
+for (let letter of lettersToReplace) {
+//Check if the current character matches the current letter
+    if (character.toLowerCase() === letter.toLowerCase()) {
+//Replace the character with '_' in the edited sentence
+        editedSentence += '_';
+//Adds 1 to the count
+        count++;
+        isLetterToReplace = true;
+//Breaks the loop
+        break;
+    }
+}
+//If the current character doesnt need to be replaced, it is added to the edited sentence
+    if (!isLetterToReplace) {
+        editedSentence += character;
+    }
+}
+//Returns the edited sentence and the count of replaced letters
+return {editedSentence, lettersReplaced: count};
+}
 function main()
 {
     // enter your code here
