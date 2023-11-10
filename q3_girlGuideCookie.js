@@ -8,6 +8,7 @@ Title: PROG1700 Assignment 3- Q3 Girl Guide Cookie Sell-off
 */
 // DO NOT EDIT: The main function to house our program code 
 
+//Function to get girl guide sales array
 function girlGuideSalesArray(girlGuideCount) {
     let girlGuideSales = [];
     for (let i = 0; i < girlGuideCount; i++) {
@@ -16,24 +17,33 @@ function girlGuideSalesArray(girlGuideCount) {
     return girlGuideSales;
 }
 
+// Function to get girl guide information
 function girlGuideInfo(girlGuideNumber, girlGuideSales) {
+// Prompt the user to enter the girl guide's name
     let name = readlineSync.question("Emter the guide's name: ");
+// Prompt the user to enter the number of boxes sold by the girl guide
     let totalBoxesSold = readlineSync.questionInt(`Enter the number of boxes sold by ${name}: `);
+// Store the girl guide's information in the array
     girlGuideSales[girlGuideNumber - 1] = [name, totalBoxesSold];
 }
 
+// Function to calculate average sales
 function calculateAverageSales(girlGuideSales) {
     let totalSales = 0;
+// Loop through the girl guide sales array and calculate the total sales
     for (let i = 0; i < girlGuideSales.length; i++) {
         totalSales += girlGuideSales[i][1];
     }
+// Calculate and return the average sales
     return totalSales / girlGuideSales.length;
 }
 
+// Function to determine prize for each guide
 function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
     let [name, totalBoxesSold] = girlGuide;
     let highestSellingBoxesSold = highestSellingGirlGuide[1];
 
+// Determine the prize based on the guide's total boxes sold, average sales, and the highest selling guide
     if (totalBoxesSold > averageSales) {
         return "Super Seller Badge";
     } else if (totalBoxesSold ===highestSellingBoxesSold && totalBoxesSold > 0) {
