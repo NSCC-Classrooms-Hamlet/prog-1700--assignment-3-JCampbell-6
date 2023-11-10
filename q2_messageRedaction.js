@@ -4,10 +4,9 @@ let readlineSync = require("readline-sync");
 Author: Jordan Campbell
 Date: 11-08-2023
 Title: PROG1700 Assignment 3- Q2 Message Redaction
-
 */
-// DO NOT EDIT: The main function to house our program code
 
+// DO NOT EDIT: The main function to house our program code
 //Function to replace specific letters in sentence
 function replaceLetters(inputedSentence, lettersToReplace) {
 //Count for the number of letters replaced
@@ -62,7 +61,6 @@ while (true) {
     console.log(`Redacted Phrase: ${results.editedSentence}`);
     }
 }
-
 // DO NOT EDIT: Trigger our main function to launch the program
 if (require.main === module)
 {

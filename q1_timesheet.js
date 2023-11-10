@@ -20,7 +20,6 @@ for (let i = 0; i < daysOfWorkWeek.length; i++){
     hoursWorked.push(hours);
 }
 console.log("--------------------------------------------------------------------------------------------------");
-
 //mostHoursWorked Uses Math.max to calculate the largest number in the hoursWorked array
 //mostWorkedDays uses the filter function to 
 let mostHoursWorked = Math.max(...hoursWorked);
@@ -33,7 +32,6 @@ if (mostWorkedDays.length === 1){
     console.log(`The most hours worked was on: ${mostWorkedDays.join(', ')} when you worked ${mostHoursWorked} hours each day`)
 }
 console.log("--------------------------------------------------------------------------------------------------");
-
 //For loop that calculate the sum of all numbers in the array and then prints it
 let sum = 0
 for (let i = 0; i <= hoursWorked[i]; i++){
@@ -41,9 +39,7 @@ for (let i = 0; i <= hoursWorked[i]; i++){
 }
 console.log("The total number of hours worked was: " + sum);
 console.log("The average number of hours worked each day was: " + (sum / hoursWorked.length));
-
 console.log("--------------------------------------------------------------------------------------------------");
-
 let insufficientHours = [];
 for (let i = 0; i < daysOfWorkWeek.length; i++) {
 // Check if the hours worked on the current day is less than 7
@@ -52,23 +48,17 @@ for (let i = 0; i < daysOfWorkWeek.length; i++) {
         insufficientHours.push(daysOfWorkWeek[i]);
     }
 }
-
 // Check if there are any days with insufficient hours
 if (insufficientHours.length > 0) {
 // If there are, print a message with the list of days
     console.log("Days you slacked off (i.e. worked less than 7 hours): " + insufficientHours.join(', '));
 }
 }
-
-
-
 // DO NOT EDIT: Trigger our main function to launch the program
 if (require.main === module)
 {
     main();
 }
-
-
 /*
 Design and write a program that accepts the number of hours worked on each of five work days from the user, then displays different information calculated about those entries as output. 
 Your solution should demonstrate an understanding of how to apply list and looping concepts in a program that should:
@@ -77,5 +67,4 @@ Your solution should demonstrate an understanding of how to apply list and loopi
 •	Determine the day(s) on which the most hours were worked and display the day(s) and hours onscreen. 
 •	Calculate and display both the total and the daily average of hours worked.
 •	Display a list of all days that had insufficient hours, which is defined as less than 7 hours.
-
 */

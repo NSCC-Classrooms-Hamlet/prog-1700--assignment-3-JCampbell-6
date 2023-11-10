@@ -4,8 +4,8 @@ let readlineSync = require("readline-sync");
 Author: Jordan Campbell
 Date: 11/08/2023
 Title: PROG1700 Assignment 3- Q3 Girl Guide Cookie Sell-off
-
 */
+
 // DO NOT EDIT: The main function to house our program code 
 
 //Function to get girl guide sales array
@@ -110,5 +110,4 @@ Your solution should demonstrate an understanding of how to apply list/loop conc
  (Hint: Some potential solution ideas: Research parallel arrays or two-dimensional lists)
 
 Your solution must contain examples demonstrating your understanding of appropriate use of functions and core assignment concepts (loops and lists).
-
 */
