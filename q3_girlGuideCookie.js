@@ -20,7 +20,7 @@ function girlGuideSalesArray(girlGuideCount) {
 // Function to get girl guide information
 function girlGuideInfo(girlGuideNumber, girlGuideSales) {
 // Prompt the user to enter the girl guide's name
-    let name = readlineSync.question("Emter the guide's name: ");
+    let name = readlineSync.question("Enter the girl guide's name: ");
 // Prompt the user to enter the number of boxes sold by the girl guide
     let totalBoxesSold = readlineSync.questionInt(`Enter the number of boxes sold by ${name}: `);
 // Store the girl guide's information in the array
@@ -44,12 +44,12 @@ function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
     let highestSellingBoxesSold = highestSellingGirlGuide[1];
 
 // Determine the prize based on the guide's total boxes sold, average sales, and the highest selling guide
-    if (totalBoxesSold > averageSales) {
-        return "Super Seller Badge";
-    } else if (totalBoxesSold ===highestSellingBoxesSold && totalBoxesSold > 0) {
+    if (highestSellingBoxesSold === totalBoxesSold && totalBoxesSold > 0) {
         return "Trip to the Girl Guide Jamboree in Aruba";
+    } else if (totalBoxesSold > averageSales) {
+        return "Super Seller Badge"
     } else if (totalBoxesSold > 0) {
-        return "Cookies to split";
+        return "Left over cookies";
     } else {
         return "-";
     }
@@ -68,7 +68,8 @@ function main()
 
     let highestSellingGirlGuide = girlGuideSales[0];
     for (let i = 1; i < girlGuideSales.length; i++) {
-        highestSellingGirlGuide = girlGuideSales[i];
+        if (girlGuideSales[i][1] > highestSellingGirlGuide[1]) {
+        highestSellingGirlGuide = girlGuideSales[i]; 
     }
 }
 
@@ -79,8 +80,8 @@ console.log("______________________________")
 for (let i = 0; i < girlGuideSales.length; i++) {
     let prize = determinePrize(girlGuideSales[i], averageSales, highestSellingGirlGuide);
     console.log(`${girlGuideSales[i][0]}            ${prize}`);
+    }
 }
-
 // DO NOT EDIT: Trigger our main function to launch the program
 if (require.main === module)
 {
