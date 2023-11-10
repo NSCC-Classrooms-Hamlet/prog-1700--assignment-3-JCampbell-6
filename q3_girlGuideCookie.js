@@ -57,7 +57,8 @@ function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
 
 function main()
 {
-    // enter your code here
+let girlGuideCount = readlineSync.questionInt("How many girl guides sold cookies? ");
+let girlGuideSales = girlGuideSalesArray(girlGuideCount);
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
