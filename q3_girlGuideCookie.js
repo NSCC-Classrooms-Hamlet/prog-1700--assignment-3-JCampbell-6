@@ -57,19 +57,28 @@ function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
 
 function main()
 {
-let girlGuideCount = readlineSync.questionInt("How many girl guides sold cookies? ");
-let girlGuideSales = girlGuideSalesArray(girlGuideCount);
+    let girlGuideCount = readlineSync.questionInt("How many girl guides sold cookies? ");
+    let girlGuideSales = girlGuideSalesArray(girlGuideCount);
 
-for (let i = 1; i <= girlGuideCount; i++) {
-    girlGuideInfo(i, girlGuideSales);
+    for (let i = 1; i <= girlGuideCount; i++) {
+        girlGuideInfo(i, girlGuideSales);
 }
 
-let averageSales = calculateAverageSales(girlGuideSales);
+    let averageSales = calculateAverageSales(girlGuideSales);
 
-let highestSellingGirlGuide = girlGuideSales[0];
-for (let i = 1; i < girlGuideSales.length; i++) {
-    highestSellingGirlGuide = girlGuideSales[i];
+    let highestSellingGirlGuide = girlGuideSales[0];
+    for (let i = 1; i < girlGuideSales.length; i++) {
+        highestSellingGirlGuide = girlGuideSales[i];
+    }
 }
+
+console.log(`\nThe average number of boxes sold by each guide was: ${averageSales.toFixed(1)}`);
+
+console.log("\nGuide          Prizes Won");
+console.log("______________________________")
+for (let i = 0; i < girlGuideSales.length; i++) {
+    let prize = determinePrize(girlGuideSales[i], averageSales, highestSellingGirlGuide);
+    console.log(`${girlGuideSales[i][0]}            ${prize}`);
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
