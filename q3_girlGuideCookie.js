@@ -57,15 +57,20 @@ function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
 
 function main()
 {
+// Prompt the user to enter the number of girl guides who sold cookies
     let girlGuideCount = readlineSync.questionInt("How many girl guides sold cookies? ");
+// Start the girl guide sales array
     let girlGuideSales = girlGuideSalesArray(girlGuideCount);
 
+// Input girl guide information
     for (let i = 1; i <= girlGuideCount; i++) {
         girlGuideInfo(i, girlGuideSales);
 }
 
+// Calculate average sales
     let averageSales = calculateAverageSales(girlGuideSales);
 
+// Find the  girlguide with the highest sales
     let highestSellingGirlGuide = girlGuideSales[0];
     for (let i = 1; i < girlGuideSales.length; i++) {
         if (girlGuideSales[i][1] > highestSellingGirlGuide[1]) {
@@ -73,11 +78,14 @@ function main()
     }
 }
 
+// Print the average number of boxes sold by each girl guide
 console.log(`\nThe average number of boxes sold by each guide was: ${averageSales.toFixed(1)}`);
 
+// Display girl guide names and prizes
 console.log("\nGuide          Prizes Won");
 console.log("______________________________")
 for (let i = 0; i < girlGuideSales.length; i++) {
+// Call the function to determine the prize for each girl guide and displays the results
     let prize = determinePrize(girlGuideSales[i], averageSales, highestSellingGirlGuide);
     console.log(`${girlGuideSales[i][0]}            ${prize}`);
     }
