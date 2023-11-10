@@ -22,6 +22,29 @@ function girlGuideInfo(girlGuideNumber, girlGuideSales) {
     girlGuideSales[girlGuideNumber - 1] = [name, totalBoxesSold];
 }
 
+function calculateAverageSales(girlGuideSales) {
+    let totalSales = 0;
+    for (let i = 0; i < girlGuideSales.length; i++) {
+        totalSales += girlGuideSales[i][1];
+    }
+    return totalSales / girlGuideSales.length;
+}
+
+function determinePrize(girlGuide, averageSales, highestSellingGirlGuide) {
+    let [name, totalBoxesSold] = girlGuide;
+    let highestSellingBoxesSold = highestSellingGirlGuide[1];
+
+    if (totalBoxesSold > averageSales) {
+        return "Super Seller Badge";
+    } else if (totalBoxesSold ===highestSellingBoxesSold && totalBoxesSold > 0) {
+        return "Trip to the Girl Guide Jamboree in Aruba";
+    } else if (totalBoxesSold > 0) {
+        return "Cookies to split";
+    } else {
+        return "-";
+    }
+}
+
 function main()
 {
     // enter your code here
