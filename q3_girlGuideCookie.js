@@ -59,6 +59,17 @@ function main()
 {
 let girlGuideCount = readlineSync.questionInt("How many girl guides sold cookies? ");
 let girlGuideSales = girlGuideSalesArray(girlGuideCount);
+
+for (let i = 1; i <= girlGuideCount; i++) {
+    girlGuideInfo(i, girlGuideSales);
+}
+
+let averageSales = calculateAverageSales(girlGuideSales);
+
+let highestSellingGirlGuide = girlGuideSales[0];
+for (let i = 1; i < girlGuideSales.length; i++) {
+    highestSellingGirlGuide = girlGuideSales[i];
+}
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
