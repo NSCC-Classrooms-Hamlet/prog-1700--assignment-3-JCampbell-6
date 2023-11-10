@@ -1,5 +1,5 @@
 "use strict";
-
+let readlineSync = require("readline-sync");
 /*
 Author: Jordan Campbell
 Date: 11/08/2023
@@ -7,6 +7,21 @@ Title: PROG1700 Assignment 3- Q3 Girl Guide Cookie Sell-off
 
 */
 // DO NOT EDIT: The main function to house our program code 
+
+function girlGuideSalesArray(girlGuideCount) {
+    let girlGuideSales = [];
+    for (let i = 0; i < girlGuideCount; i++) {
+        girlGuideSales.push([null, 0]);
+    }
+    return girlGuideSales;
+}
+
+function girlGuideInfo(girlGuideNumber, girlGuideSales) {
+    let name = readlineSync.question("Emter the guide's name: ");
+    let totalBoxesSold = readlineSync.questionInt(`Enter the number of boxes sold by ${name}: `);
+    girlGuideSales[girlGuideNumber - 1] = [name, totalBoxesSold];
+}
+
 function main()
 {
     // enter your code here
